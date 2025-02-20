@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:md_car_wash/utils/colors.dart';
-import 'package:md_car_wash/widgets/navbar/navLogo.dart';
-import 'package:md_car_wash/widgets/navbar/nav_button.dart';
+
+import '../navbar/navLogo.dart';
+
 class Sidebar extends StatelessWidget {
   const Sidebar({super.key});
 

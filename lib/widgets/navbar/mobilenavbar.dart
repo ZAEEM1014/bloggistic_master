@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:md_car_wash/widgets/navbar/navLogo.dart';
-import 'package:md_car_wash/widgets/sidebar/sidebar.dart';
+
+import '../sidebar/sidebar.dart';
+import 'navLogo.dart';
+
 class Mobilenavbar extends StatelessWidget {
   const Mobilenavbar({super.key});
 

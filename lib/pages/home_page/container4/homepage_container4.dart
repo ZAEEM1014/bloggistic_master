@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:md_car_wash/pages/home_page/container4/homepage_container4_desktop.dart';
-import 'package:md_car_wash/pages/home_page/container4/homepage_container4_mobile.dart';
-import 'package:md_car_wash/pages/home_page/container4/homepage_container4_tablet.dart';
-import 'package:md_car_wash/responsiveLayout.dart';
+
+import '../../../responsiveLayout.dart';
+import 'homepage_container4_desktop.dart';
+import 'homepage_container4_mobile.dart';
+import 'homepage_container4_tablet.dart';
+
 
 class HomepageContainer4 extends StatelessWidget {
   const HomepageContainer4({super.key});

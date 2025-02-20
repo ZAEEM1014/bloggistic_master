@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:md_car_wash/utils/colors.dart';
+
+import 'colors.dart';
+
 
 class Customelevatedbutton extends StatelessWidget {
   final double width;

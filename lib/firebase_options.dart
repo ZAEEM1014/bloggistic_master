@@ -56,9 +56,9 @@ class DefaultFirebaseOptions {
     apiKey: 'AIzaSyAcDfeyw3o6eB6f-0r0z9ClpJXJAfgx_Oo',
     appId: '1:818043567785:web:2ce66f9f6cd03b868c33b8',
     messagingSenderId: '818043567785',
-    projectId: 'md-car-wash-ea4e6',
-    authDomain: 'md-car-wash-ea4e6.firebaseapp.com',
-    storageBucket: 'md-car-wash-ea4e6.firebasestorage.app',
+    projectId: 'bloggistic_master-ea4e6',
+    authDomain: 'bloggistic_master-ea4e6.firebaseapp.com',
+    storageBucket: 'bloggistic_master-ea4e6.firebasestorage.app',
     measurementId: 'G-Y27F70ZP9B',
   );
 }

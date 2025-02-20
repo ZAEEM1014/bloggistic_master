@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:md_car_wash/utils/customElevatedButton.dart';
+
+import '../../utils/customElevatedButton.dart';
 import 'navLogo.dart';
 import 'nav_button.dart';
 

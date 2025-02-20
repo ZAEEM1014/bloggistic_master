@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:md_car_wash/controllers/homepage_container2_smooth_horizontal_contarolling.dart';
-import 'package:md_car_wash/pages/home_page/container2/homepage_card_mobile_and_tablet.dart';
-import 'package:md_car_wash/utils/custom_title.dart';
 
+
+import '../../../controllers/homepage_container2_smooth_horizontal_contarolling.dart';
 import '../../../utils/constants.dart';
+import '../../../utils/custom_title.dart';
 import 'homepage_card_desktop.dart';
+import 'homepage_card_mobile_and_tablet.dart';
 class HomepageContainer2Tablet extends StatefulWidget {
   const HomepageContainer2Tablet({super.key});
 

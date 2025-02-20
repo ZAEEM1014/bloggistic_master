@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:md_car_wash/utils/colors.dart';
-import 'package:md_car_wash/utils/customElevatedButton.dart';
-import 'package:md_car_wash/utils/custom_textbutton.dart';
-import 'package:md_car_wash/widgets/navbar/navLogo.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import '../../utils/colors.dart';
+import '../../utils/customElevatedButton.dart';
+import '../../utils/custom_textbutton.dart';
+import '../navbar/navLogo.dart';
 
 class DesktopBottom extends StatelessWidget {
   const DesktopBottom({super.key});
@@ -22,12 +23,12 @@ class DesktopBottom extends StatelessWidget {
         children: [
           SizedBox(height: 20),
           Text(
-            "Mdmobilecarwash's tips are 100% Free",
+            "Get the Latest Blog Updates!",
             style: TextStyle(fontFamily: 'poppins', fontSize: 23),
           ),
           SizedBox(height: 10),
           Text(
-              "See why people around the world are choosing us. Enter your email to get our tips for free.",
+              "Subscribe to our newsletter and stay updated with the latest blog posts and insights.",
               style: TextStyle(fontSize: 15)),
           SizedBox(height: 20),
           Row(
@@ -51,7 +52,7 @@ class DesktopBottom extends StatelessWidget {
               SizedBox(width: 10),
               Customelevatedbutton(
                 icon: Icons.mail,
-                text: "Get Started!",
+                text: "Subscribe",
                 backgroundColor: Colors.black,
                 iconColor: Colors.white,
                 textColor: Colors.white,
@@ -73,11 +74,11 @@ class DesktopBottom extends StatelessWidget {
                       fontColor: Colors.black,
                     ),
                     Text(
-                      "© 2024 Mdmobilecarwash",
+                      "© 2024 Bloggistic",
                       style: TextStyle(fontSize: 15, height: 0.8),
                     ),
                     Text(
-                      "Safest place for your car",
+                      "Your go-to platform for insightful blogs",
                       style: TextStyle(fontSize: 15, color: Colors.grey),
                     )
                   ],
@@ -94,7 +95,7 @@ class DesktopBottom extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 12),
                             child: Text(
-                              "Info",
+                              "Explore",
                               style: TextStyle(
                                   fontFamily: 'montserrat',
                                   fontSize: 16,
@@ -103,9 +104,11 @@ class DesktopBottom extends StatelessWidget {
                             ),
                           ),
                           SizedBox(height: 10),
-                                   CustomTextButton(onPressed: (){}, text: "Privacy"),
-                                    SizedBox(height: 3),
-                                    CustomTextButton(onPressed: (){}, text: "Terms"),
+                          CustomTextButton(onPressed: (){}, text: "Latest Blogs"),
+                          SizedBox(height: 3),
+                          CustomTextButton(onPressed: (){}, text: "Popular Blogs"),
+                          SizedBox(height: 3),
+                          CustomTextButton(onPressed: (){}, text: "Trending Topics"),
                         ],
                       ),
                       Column(
@@ -114,7 +117,7 @@ class DesktopBottom extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 12),
                             child: Text(
-                              "Resources",
+                              "Categories",
                               style: TextStyle(
                                   fontFamily: 'montserrat',
                                   fontSize: 16,
@@ -123,15 +126,15 @@ class DesktopBottom extends StatelessWidget {
                             ),
                           ),
                           SizedBox(height: 10),
-                          CustomTextButton(onPressed: (){}, text: "Basic wash"),
+                          CustomTextButton(onPressed: (){}, text: "Tech"),
                           SizedBox(height: 3),
-                          CustomTextButton(onPressed: (){}, text: "Super wash"),
+                          CustomTextButton(onPressed: (){}, text: "Business"),
                           SizedBox(height: 3),
-                          CustomTextButton(onPressed: (){}, text: "Deluxe wash"),
+                          CustomTextButton(onPressed: (){}, text: "Lifestyle"),
                           SizedBox(height: 3),
-                          CustomTextButton(onPressed: (){}, text: "Premium wash"),
+                          CustomTextButton(onPressed: (){}, text: "Health"),
                           SizedBox(height: 3),
-                          CustomTextButton(onPressed: (){}, text: "Ultimate wash"),
+                          CustomTextButton(onPressed: (){}, text: "Finance"),
                         ],
                       ),
                       Column(
@@ -140,7 +143,7 @@ class DesktopBottom extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 12),
                             child: Text(
-                              "Say Hi!",
+                              "Connect",
                               style: TextStyle(
                                   fontFamily: 'montserrat',
                                   fontSize: 16,

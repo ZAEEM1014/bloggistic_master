@@ -2,9 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'package:get/get.dart';
-import 'package:md_car_wash/utils/image_strings.dart';
+
 
 import '../../../controllers/homepage_container6_controller.dart';
+import '../../../utils/image_strings.dart';
 
 class HomepageContainer6Desktop extends StatelessWidget {
   const HomepageContainer6Desktop({super.key});

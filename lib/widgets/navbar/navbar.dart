@@ -1,8 +1,10 @@
+import 'package:bloggistic_master/widgets/navbar/tabletnavbar.dart';
 import 'package:flutter/material.dart';
-import 'package:md_car_wash/responsiveLayout.dart';
-import 'package:md_car_wash/widgets/navbar/desktopnavbar.dart';
-import 'package:md_car_wash/widgets/navbar/mobilenavbar.dart';
-import 'package:md_car_wash/widgets/navbar/tabletnavbar.dart';
+
+import '../../responsiveLayout.dart';
+import 'desktopnavbar.dart';
+import 'mobilenavbar.dart';
+
 
 class Navbar extends StatelessWidget {
   const Navbar({super.key});

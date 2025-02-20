@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:md_car_wash/utils/colors.dart';
-import 'package:md_car_wash/utils/customElevatedButton.dart';
-import 'package:md_car_wash/utils/image_strings.dart';
+
+import '../../../utils/colors.dart';
+import '../../../utils/customElevatedButton.dart';
+import '../../../utils/image_strings.dart';
+
 
 class HomepageContainer3Tablet extends StatelessWidget {
   const HomepageContainer3Tablet({super.key});

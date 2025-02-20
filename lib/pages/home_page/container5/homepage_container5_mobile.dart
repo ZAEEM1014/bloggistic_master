@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:md_car_wash/controllers/homepage_container5_controller.dart';
 
+import '../../../controllers/homepage_container5_controller.dart';
 import '../../../utils/custom_title.dart';
 
 class HomepageContainer5Mobile extends StatelessWidget {

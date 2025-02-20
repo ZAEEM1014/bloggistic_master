@@ -1,8 +1,11 @@
+import 'package:bloggistic_master/widgets/bottom/tablet_bottom.dart';
 import 'package:flutter/material.dart';
-import 'package:md_car_wash/responsiveLayout.dart';
-import 'package:md_car_wash/widgets/bottom/desktop_bottom.dart';
-import 'package:md_car_wash/widgets/bottom/mobile_bottom.dart';
-import 'package:md_car_wash/widgets/bottom/tablet_bottom.dart';
+
+import '../../responsiveLayout.dart';
+import 'desktop_bottom.dart';
+import 'mobile_bottom.dart';
+
+
 
 class Bottom extends StatelessWidget {
   const Bottom({super.key});

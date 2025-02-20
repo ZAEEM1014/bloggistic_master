@@ -1,9 +1,10 @@
+import 'package:bloggistic_master/pages/home_page/homepage.dart';
+import 'package:bloggistic_master/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:get/get.dart';
-import 'package:md_car_wash/pages/home_page/homepage.dart';
-import 'package:md_car_wash/utils/colors.dart';
+
 import 'customScrollBehaviour.dart';
 
 void main()async {

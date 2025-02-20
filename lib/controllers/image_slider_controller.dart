@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
-import 'package:md_car_wash/utils/image_strings.dart';
+
+import '../utils/image_strings.dart';
+
 
 class BackgroundSliderController extends GetxController {
   // List of image URLs or asset paths

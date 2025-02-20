@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:md_car_wash/utils/colors.dart';
+
+import '../../../utils/colors.dart';
+
 
 class HomepageAnimatedText extends StatelessWidget {
   final double fontSize;

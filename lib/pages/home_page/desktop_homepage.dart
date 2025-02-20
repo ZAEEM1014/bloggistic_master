@@ -2,9 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:md_car_wash/widgets/navbar/navbar.dart';
+
 
 import '../../controllers/home_page_controller_desktop.dart';
+import '../../widgets/navbar/navbar.dart';
 
 class DesktopHomepage extends StatelessWidget {
   const DesktopHomepage({super.key});

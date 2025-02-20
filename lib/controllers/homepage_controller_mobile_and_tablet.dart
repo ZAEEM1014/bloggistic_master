@@ -1,13 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:md_car_wash/pages/home_page/container1/homepage_container1.dart';
-import 'package:md_car_wash/pages/home_page/container2/homepage_container2.dart';
-import 'package:md_car_wash/pages/home_page/container3/homepage_container3.dart';
-import 'package:md_car_wash/pages/home_page/container4/homepage_container4.dart';
-import 'package:md_car_wash/pages/home_page/container5/homepage_container5.dart';
-import 'package:md_car_wash/pages/home_page/container6/homepage_container6.dart';
-import 'package:md_car_wash/utils/colors.dart';
-import 'package:md_car_wash/widgets/bottom/bottom.dart';
+
+import '../pages/home_page/container1/homepage_container1.dart';
+import '../pages/home_page/container2/homepage_container2.dart';
+import '../pages/home_page/container3/homepage_container3.dart';
+import '../pages/home_page/container4/homepage_container4.dart';
+import '../pages/home_page/container5/homepage_container5.dart';
+import '../pages/home_page/container6/homepage_container6.dart';
+import '../utils/colors.dart';
+import '../widgets/bottom/bottom.dart';
 
 class HomePageController extends GetxController {
   final widgets = <Widget>[].obs;

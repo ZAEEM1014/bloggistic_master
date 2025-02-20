@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:md_car_wash/controllers/homepage_container2_smooth_horizontal_contarolling.dart';
-import 'package:md_car_wash/utils/custom_title.dart';
-import 'package:md_car_wash/models/Blogs.dart';
 
+
+import '../../../controllers/homepage_container2_smooth_horizontal_contarolling.dart';
 import '../../../models/Blogs.dart';
 import '../../../utils/constants.dart';
+import '../../../utils/custom_title.dart';
 import '../../BlogShowPage/BlogShowPage.dart';
 import 'homepage_card_desktop.dart';
 

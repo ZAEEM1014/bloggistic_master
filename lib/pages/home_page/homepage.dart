@@ -1,8 +1,10 @@
+import 'package:bloggistic_master/pages/home_page/tablet_homepage.dart';
 import 'package:flutter/material.dart';
-import 'package:md_car_wash/pages/home_page/desktop_homepage.dart';
-import 'package:md_car_wash/pages/home_page/mobile_homepage.dart';
-import 'package:md_car_wash/pages/home_page/tablet_homepage.dart';
-import 'package:md_car_wash/responsiveLayout.dart';
+
+import '../../responsiveLayout.dart';
+import 'desktop_homepage.dart';
+import 'mobile_homepage.dart';
+
 
 class Homepage extends StatelessWidget {
   const Homepage({super.key});

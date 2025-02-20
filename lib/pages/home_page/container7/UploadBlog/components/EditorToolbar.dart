@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:md_car_wash/utils/colors.dart';
+
 class EditorToolbar extends StatelessWidget {
   final bool isBold;
   final bool isItalic;

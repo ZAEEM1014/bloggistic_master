@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
-import 'package:md_car_wash/pages/home_page/container1/homepage_container1_desktop.dart';
-import 'package:md_car_wash/pages/home_page/container1/homepage_container1_mobile.dart';
-import 'package:md_car_wash/pages/home_page/container1/homepage_container1_tablet.dart';
-import 'package:md_car_wash/responsiveLayout.dart';
+import '../../../responsiveLayout.dart';
+import 'homepage_container1_desktop.dart';
+import 'homepage_container1_mobile.dart';
+import 'homepage_container1_tablet.dart';
+
+
 
 
 class HomepageContainer1 extends StatelessWidget {
