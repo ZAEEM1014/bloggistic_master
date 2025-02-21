@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "bloggistic_master-ea4e6"
-  }
+    "default": "bloggistic-master"
+  },
+  "targets": {},
+  "etags": {}
 }
