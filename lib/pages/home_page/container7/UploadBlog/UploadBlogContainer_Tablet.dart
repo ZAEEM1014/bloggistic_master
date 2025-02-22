@@ -11,23 +11,23 @@ import 'components/PostSettingPanel.dart';
 import 'components/UploadImageButton.dart';
 
 // FoodBlog Model
-class FoodBlog {
+class Blog {
   final String? date, title, description, image;
 
-  FoodBlog({this.date, this.title, this.description, this.image});
+  Blog({this.date, this.title, this.description, this.image});
 }
 
 // FoodblogPosts List
-List<FoodBlog> FoodblogPosts = [];
+List<Blog> blogPosts = [];
 
-class UploadBlogPage extends StatefulWidget {
-  const UploadBlogPage({Key? key}) : super(key: key);
+class UploadBlogContainerTablet extends StatefulWidget {
+  const UploadBlogContainerTablet({Key? key}) : super(key: key);
 
   @override
-  _UploadBlogPageState createState() => _UploadBlogPageState();
+  _UploadBlogContainerTabletState createState() => _UploadBlogContainerTabletState();
 }
 
-class _UploadBlogPageState extends State<UploadBlogPage> with TickerProviderStateMixin {
+class _UploadBlogContainerTabletState extends State<UploadBlogContainerTablet> with TickerProviderStateMixin {
   late AnimationController _controller;
 
   // Controllers for form fields
@@ -200,7 +200,7 @@ class _UploadBlogPageState extends State<UploadBlogPage> with TickerProviderStat
 
   void _publishPost() {
     if (_selectedCategory == 'Food') {
-      final newPost = FoodBlog(
+      final newPost = Blog(
         date: DateTime.now().toString(),
         title: _titleController.text,
         description: _contentController.text,
@@ -210,7 +210,7 @@ class _UploadBlogPageState extends State<UploadBlogPage> with TickerProviderStat
       );
 
       setState(() {
-        FoodblogPosts.add(newPost);
+        blogPosts.add(newPost);
       });
 
       // Clear the input fields after publishing
@@ -231,7 +231,7 @@ class _UploadBlogPageState extends State<UploadBlogPage> with TickerProviderStat
     return Scaffold(
       body: Column(
         children: [
-          // Navigation Bar
+
 
 
           // Main Content
@@ -239,77 +239,88 @@ class _UploadBlogPageState extends State<UploadBlogPage> with TickerProviderStat
             child: Row(
               children: [
                 // Sidebar for settings
-                Container(
-                  width: MediaQuery.of(context).size.width * 0.2,
-                  color: Colors.grey[200],
-                  padding: const EdgeInsets.all(10),
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 10.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            // Preview Button
-                            ElevatedButton.icon(
-                              style: ElevatedButton.styleFrom(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: kDefaultPadding * 1.3,
-                                    vertical: kDefaultPadding * 1.2),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                backgroundColor: Colors.white,
-                                side: const BorderSide(color: Colors.grey),
-                              ),
-                              onPressed: () {
-                                // Add Preview functionality
-                              },
-                              icon: const Icon(Icons.remove_red_eye, color: Colors.grey),
-                              label: const Text(
-                                'Preview',
-                                style: TextStyle(color: Colors.grey),
-                              ),
-                            ),
+                Expanded(
+                  flex: 3,
 
-                            // Publish Button
-                            ElevatedButton.icon(
-                              style: ElevatedButton.styleFrom(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: kDefaultPadding * 1.3,
-                                    vertical: kDefaultPadding * 1.2),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 0.2,
+                    height: MediaQuery.of(context).size.height * 5,
+                    color: Colors.grey[200],
+                    padding: const EdgeInsets.all(10),
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 10.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              // Preview Button
+                              Expanded(
+                                child: ElevatedButton.icon(
+                                  style: ElevatedButton.styleFrom(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: kDefaultPadding * 0.5,
+                                        vertical: kDefaultPadding * 1),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    backgroundColor: Colors.white,
+                                    side: const BorderSide(color: Colors.grey),
+                                  ),
+                                  onPressed: () {
+                                    // Add Preview functionality
+                                  },
+                                  icon: const Icon(Icons.remove_red_eye, color: Colors.grey),
+                                  label: const Text(
+                                    'Preview',
+                                    style: TextStyle(color: Colors.grey),
+                                  ),
                                 ),
-                                backgroundColor: kPrimaryColor,
                               ),
-                              onPressed: _publishPost,
-                              icon: const Icon(Icons.play_arrow, color: Colors.white),
-                              label: const Text(
-                                'Publish',
-                                style: TextStyle(color: Colors.white),
+
+                              // Publish Button
+                              Expanded(
+                                child: ElevatedButton.icon(
+                                  style: ElevatedButton.styleFrom(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: kDefaultPadding * 0.5,
+                                        vertical: kDefaultPadding * 1),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                    backgroundColor: kPrimaryColor,
+                                  ),
+                                  onPressed: _publishPost,
+                                  icon: const Icon(Icons.play_arrow, color: Colors.white),
+                                  label: const Text(
+                                    'Publish',
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
 
-                      PostSettings(
-                        selectedCategory: _selectedCategory,
-                        onCategoryChanged: (newValue) {
-                          setState(() {
-                            _selectedCategory = newValue!;
-                          });
-                        },
-                        imagePreviewBox: ImagePreviewBox(selectedImageBytes: _selectedImageBytes),
-                        uploadCoverImageButton: UploadCoverImageButton(onPressed: _selectCoverImage),
-                      ),
-                    ],
+                        PostSettings(
+                          selectedCategory: _selectedCategory,
+                          onCategoryChanged: (newValue) {
+                            setState(() {
+                              _selectedCategory = newValue!;
+                            });
+                          },
+                          imagePreviewBox: ImagePreviewBox(selectedImageBytes: _selectedImageBytes),
+                          uploadCoverImageButton: UploadCoverImageButton(onPressed: _selectCoverImage),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
 
                 // Editor Section
                 Expanded(
+                  flex: 5,
+
                   child: Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Column(

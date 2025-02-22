@@ -1,20 +1,21 @@
-import 'package:bloggistic_master/widgets/navbar/tabletnavbar.dart';
 import 'package:flutter/material.dart';
-
 import '../../responsiveLayout.dart';
 import 'desktopnavbar.dart';
 import 'mobilenavbar.dart';
-
+import 'tabletnavbar.dart';
 
 class Navbar extends StatelessWidget {
-  const Navbar({super.key});
+  final Function(double) scrollToSection;
+
+  const Navbar({super.key, required this.scrollToSection});
 
   @override
   Widget build(BuildContext context) {
     return ResponsiveLayout(
-        mobileView: Mobilenavbar(),
-        tabletView: Tabletnavbar(),
-        desktopView: DesktopNavBar(),
-        largeScreenView: DesktopNavBar());
+      mobileView: Mobilenavbar(scrollToSection: scrollToSection), // ✅ Fixed
+      tabletView: Tabletnavbar(scrollToSection: scrollToSection), // ✅ Fixed
+      desktopView: DesktopNavBar(scrollToSection: scrollToSection),
+      largeScreenView: DesktopNavBar(scrollToSection: scrollToSection),
+    );
   }
 }

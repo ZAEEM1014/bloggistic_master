@@ -1,3 +1,7 @@
+import 'package:bloggistic_master/pages/home_page/container1/homepage_container1_desktop.dart';
+import 'package:bloggistic_master/pages/home_page/container2/homepage_container2_desktop.dart';
+import 'package:bloggistic_master/pages/home_page/container3/homepage_container3_desktop.dart';
+import 'package:bloggistic_master/pages/home_page/container7/homepage_container7_desktop.dart';
 import 'package:bloggistic_master/pages/home_page/homepage.dart';
 import 'package:bloggistic_master/utils/colors.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +28,7 @@ class MyApp extends StatelessWidget {
     double speedFactor = MediaQuery.of(context).size.width < 600 ? 2.0 : 5.0;
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "MD Mobile Car Wash",
+      title: "Bloggistic-master",
       scrollBehavior: CustomScrollBehavior(speedFactor: speedFactor),
       theme: ThemeData(
         useMaterial3: true,
@@ -37,6 +41,10 @@ class MyApp extends StatelessWidget {
       home: const Homepage(),
       getPages: [
         GetPage(name: '/', page: () => const Homepage()),
+        GetPage(name: '/HomepageContainer1Desktop', page: () => HomepageContainer1Desktop()),
+        GetPage(name: '/HomepageContainer2Desktop', page: () => HomepageContainer2Desktop()),
+        GetPage(name: '/HomepageContainer7Desktop', page: () => HomepageContainer7Desktop()),
+        GetPage(name: '/HomepageContainer3Desktop', page: () => HomepageContainer3Desktop()),
       ],
     );
   }

@@ -32,7 +32,7 @@ class HomepageContainer1Desktop extends StatelessWidget {
               // Fill entire container
               viewportFraction: 1.0,
               // Only show one image at a time
-              autoPlay: false,
+              autoPlay: true,
               autoPlayInterval: const Duration(seconds: 3),
 
               onPageChanged: (index, reason) {

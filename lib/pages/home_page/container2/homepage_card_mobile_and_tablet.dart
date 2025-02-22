@@ -35,8 +35,8 @@ class HomepageCardMobileAndTablet extends StatelessWidget {
         children: [
           // Main card
           Container(
-            width: size.width*0.8,
-            height: size.width*0.9,
+            width: size.width*0.5,
+            height: size.width*0.3,
             padding: EdgeInsets.symmetric(vertical: size.width*0.04, horizontal: size.width*0.02),
             decoration: BoxDecoration(
               color: color,

@@ -3,8 +3,10 @@ import 'package:get/get.dart';
 
 
 import '../../../controllers/homepage_container2_smooth_horizontal_contarolling.dart';
+import '../../../models/Blogs.dart';
 import '../../../utils/constants.dart';
 import '../../../utils/custom_title.dart';
+import '../../BlogShowPage/BlogShowPage.dart';
 import 'homepage_card_desktop.dart';
 import 'homepage_card_mobile_and_tablet.dart';
 class HompageContainer2Mobile extends StatefulWidget {
@@ -53,16 +55,16 @@ class _HompageContainer2MobileState extends State<HompageContainer2Mobile>
           SizedBox(
             height: 30,
           ),
-          CustomTitle(title: "Pricing"),
+          CustomTitle(title: "BLOG-SHOW"),
           SizedBox(
-            height: 20,
+            height: 10,
           ),
           Text(
-            "It is a long established fact that a reader will be distracted by the readable content of a page\nwhen looking at its layout. ",
+            "Dive into thought-provoking articles, expert insights, and \ntrending topics, covering everything from innovation\n to everyday experiences.Lets read!!.... ",
             textAlign: TextAlign.center,
             style: TextStyle(
                 fontFamily: 'montserrat',
-                fontSize: size.width*0.036
+                fontSize: size.width*0.026
             ),
           ),
           Container(
@@ -96,29 +98,24 @@ class _HompageContainer2MobileState extends State<HompageContainer2Mobile>
     ];
 
     return Row(
-      children: [
-        HomepageCardMobileAndTablet(
-          header: "Basic Wash",
-          price: "24.9",
+      children: List.generate(BlogPosts.length, (index) {
+        final blog = BlogPosts[index];
+        return HomepageCardDesktop(
+          image: blog.image ?? '',
+          title: blog.title ?? 'No Title',
+          description: blog.description ?? 'No Description',
+          date: blog.date ?? 'No Date',
+          onPress: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => BlogShowPage(blog: blog),
+              ),
+            );
+          },
           color: colors[index % colors.length],
-          description:
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-          features: [
-            "Soft Cloth Wash",
-            "Chamios Dry",
-            "Tyres Glossed",
-            "Add Spray Wax \$15",
-            "Soft Cloth Wash",
-            "Chamios Dry",
-            "Tyres Glossed",
-            "Add Spray Wax \$15",
-          ],
-          buttonText: "Book Now",
-          buttonIcon: Icons.book_online,
-          onButtonPressed: () {},
-        ),
-        const SizedBox(width: 30),
-      ],
+        );
+      }),
     );
   }
 

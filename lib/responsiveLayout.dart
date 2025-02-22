@@ -23,7 +23,7 @@ class ResponsiveLayout extends StatelessWidget {
       return mobileView;
     }
     // Tablet screen size - between 601px and 900px
-    else if (width <= 1024) {
+    else if (width > 600 && width <= 1024) {
       return tabletView;
     }
     // Desktop screen size - between 901px and 1200px

@@ -1,20 +1,19 @@
+import 'package:bloggistic_master/pages/home_page/container7/UploadBlog/UploadBlogContainer_Tablet.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import '../../../controllers/homepage_container2_smooth_horizontal_contarolling.dart';
 import '../../../utils/constants.dart';
 import '../../../utils/custom_title.dart';
-import 'UploadBlog/uploadBlog.dart';
+import 'UploadBlog/UploadBlogContainer_Desktop.dart';
 
-class HomepageContainer2Tablet extends StatefulWidget {
-  const HomepageContainer2Tablet({super.key});
+class HomepageContainer7Tablet extends StatefulWidget {
+  const HomepageContainer7Tablet({super.key});
 
   @override
-  State<HomepageContainer2Tablet> createState() => _HomepageContainer2TabletState();
+  State<HomepageContainer7Tablet> createState() => _HomepageContainer7TabletState();
 }
 
-class _HomepageContainer2TabletState extends State<HomepageContainer2Tablet>
+class _HomepageContainer7TabletState extends State<HomepageContainer7Tablet>
     with TickerProviderStateMixin {
-  late ScrollingController controller;
+
 
 
 
@@ -23,18 +22,18 @@ class _HomepageContainer2TabletState extends State<HomepageContainer2Tablet>
     Size size = MediaQuery.of(context).size;
     return Container(
       width: size.width <= 1920 ? size.width : Constants.desktopwidth,
-      height: 600,
+      height: 870,
       child: Column(
         children: [
           SizedBox(
             height: 30,
           ),
-          CustomTitle(title: "Pricing"),
+          CustomTitle(title: "BLOG-WRITE"),
           SizedBox(
             height: 20,
           ),
           Text(
-            "It is a long established fact that a reader will be distracted by the readable content of a page\nwhen looking at its layout. ",
+            "Dive into thought-provoking articles, expert insights, and trending topics, covering everything from \ninnovation to everyday experiences\n Lets Write!!.... ",
             textAlign: TextAlign.center,
             style: TextStyle(
                 fontFamily: 'montserrat',
@@ -44,16 +43,9 @@ class _HomepageContainer2TabletState extends State<HomepageContainer2Tablet>
           Container(
             constraints: BoxConstraints(
                 maxWidth: size.width <= 1920 ? size.width : Constants.desktopwidth,
-                maxHeight: 450
+                maxHeight: 660
             ),
-            child: SingleChildScrollView(
-              controller: controller.scrollController,
-              scrollDirection: Axis.horizontal,
-              physics: const BouncingScrollPhysics(), // Smoother manual scrolling
-              child: Row(
-                children: List.generate(10, (index) => UploadBlogPage ()),
-              ),
-            ),
+            child:UploadBlogContainerTablet (),
           ),
         ],
       ),

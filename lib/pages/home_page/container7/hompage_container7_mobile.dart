@@ -1,9 +1,10 @@
+import 'package:bloggistic_master/pages/home_page/container7/UploadBlog/UploadBlogContainer_Mobile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../controllers/homepage_container2_smooth_horizontal_contarolling.dart';
 import '../../../utils/constants.dart';
 import '../../../utils/custom_title.dart';
-import 'UploadBlog/uploadBlog.dart';
+import 'UploadBlog/UploadBlogContainer_Desktop.dart';
 
 class HompageContainer7Mobile extends StatefulWidget {
   const HompageContainer7Mobile({super.key});
@@ -23,37 +24,30 @@ class _HompageContainer7MobileState extends State<HompageContainer7Mobile>
     Size size = MediaQuery.of(context).size;
     return Container(
       width: size.width <= 1920 ? size.width : Constants.desktopwidth,
-      height: 620,
+      height: 820,
       child: Column(
         children: [
           SizedBox(
             height: 30,
           ),
-          CustomTitle(title: "Pricing"),
+          CustomTitle(title: "BLOG-WRITE"),
           SizedBox(
             height: 20,
           ),
           Text(
-            "It is a long established fact that a reader will be distracted by the readable content of a page\nwhen looking at its layout. ",
+            "Dive into thought-provoking articles, expert insights and\n trending topics, covering everything from innovation \nto everyday experiences. Lets Write!!.... ",
             textAlign: TextAlign.center,
             style: TextStyle(
                 fontFamily: 'montserrat',
-                fontSize: size.width*0.036
+                fontSize: size.width*0.026
             ),
           ),
           Container(
             constraints: BoxConstraints(
                 maxWidth: size.width <= 1920 ? size.width : Constants.desktopwidth,
-                maxHeight: 450
+                maxHeight: 660
             ),
-            child: SingleChildScrollView(
-              controller: controller.scrollController,
-              scrollDirection: Axis.horizontal,
-              physics: const BouncingScrollPhysics(), // Smoother manual scrolling
-              child: Row(
-                children: List.generate(10, (index) => UploadBlogPage ()),
-              ),
-            ),
+            child: UploadBlogContainerMobile (),
           ),
         ],
       ),

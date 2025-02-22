@@ -1,79 +1,62 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import '../../controllers/home_page_controller_desktop.dart';
 import '../../widgets/navbar/navLogo.dart';
-import '../../widgets/sidebar/sidebar.dart';
-import 'package:get/get.dart';
-class MobileHomepage extends StatelessWidget {
+import '../../widgets/navbar/navbar.dart';
+import '../../widgets/sidebar/mobilesidebar.dart';
+import '../../widgets/sidebar/tabletsidebar.dart';
+
+class MobileHomepage extends StatefulWidget {
   const MobileHomepage({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final HomePageController controller = Get.put(HomePageController());
+  _MobileHomepageState createState() => _MobileHomepageState();
+}
 
+class _MobileHomepageState extends State<MobileHomepage> {
+  final HomePageController controller = Get.put(HomePageController());
+  final ScrollController _scrollController = ScrollController();
+
+  void scrollToSection(double position) {
+    _scrollController.animateTo(
+      position,
+      duration: const Duration(milliseconds: 500),
+      curve: Curves.easeInOut,
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
-        // Wrap the AppBar in a Builder widget to provide a new context
         leading: Builder(
           builder: (BuildContext context) {
             return IconButton(
-              icon: const Icon(Icons.menu, color: Colors.white,), // Hamburger menu icon
+              icon: const Icon(Icons.menu, color: Colors.white),
               onPressed: () {
-                // Open the drawer using the current Scaffold's context
                 Scaffold.of(context).openDrawer();
               },
             );
           },
         ),
-        automaticallyImplyLeading: false, // Prevent default leading icon
+        automaticallyImplyLeading: false,
         title: Align(
-          alignment: Alignment.centerRight, // Align logo to the right side
-          child: NavLogo(
-            fontSize: 18,
-
-          ),
+          alignment: Alignment.centerRight,
+          child: NavLogo(fontSize: 18),
         ),
       ),
-      drawer: const Sidebar(), // Your Sidebar widget
+      drawer: MobileSidebar(scrollToSection: scrollToSection), // ✅ Pass function
       body: Obx(() {
         if (controller.widgets.isEmpty) {
-          return const Center(
-              child: CircularProgressIndicator(
-                color: Colors.blue,
-              ));
+          return const Center(child: CircularProgressIndicator(color: Colors.blue));
         }
-        return Column(
-          children: [
-            Expanded(
-              child: ListView.builder(
-                itemCount: controller.widgets.length,
-                itemBuilder: (context, index) {
-                  if (index < controller.widgets.length) {
-                    return controller.widgets[index];
-                  } else {
-                    return const Center(
-                        child: CircularProgressIndicator(
-                          color: Colors.blue,
-                        ));
-                  }
-                },
-              ),
-            ),
-          ],
+        return ListView.builder(
+          controller: _scrollController,
+          itemCount: controller.widgets.length,
+          itemBuilder: (context, index) => controller.widgets[index],
         );
       }),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // Add your WhatsApp functionality here
-        },
-        backgroundColor: Color(0xFF25D366), // WhatsApp green color
-        child: Icon(
-          FontAwesomeIcons.whatsapp,
-          color: Colors.white,
-          size: 34,
-        ),
-      ),
     );
   }
 }

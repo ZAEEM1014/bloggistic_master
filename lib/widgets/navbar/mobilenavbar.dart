@@ -1,23 +1,24 @@
 import 'package:flutter/material.dart';
+import '../sidebar/mobilesidebar.dart';
 
-import '../sidebar/sidebar.dart';
 import 'navLogo.dart';
 
 class Mobilenavbar extends StatelessWidget {
-  const Mobilenavbar({super.key});
+  final Function(double) scrollToSection; // ✅ Accept scroll function
+
+  const Mobilenavbar({super.key, required this.scrollToSection});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints: BoxConstraints(
+      constraints: const BoxConstraints(
         maxHeight: 70,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Sidebar(),
-          NavLogo(fontSize: 18)
-
+          MobileSidebar(scrollToSection: scrollToSection), // ✅ Pass to Sidebar
+          const NavLogo(fontSize: 18),
         ],
       ),
     );

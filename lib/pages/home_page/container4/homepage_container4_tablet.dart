@@ -11,56 +11,40 @@ class HomepageContainer4Tablet extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Container(
       constraints: BoxConstraints(
-        maxWidth: 1000,
+        maxWidth: 1050,
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SizedBox(
             height: 30,
           ),
           Center(
             child: Text(
-              "Car Detailing In Portugal | MdMobileCarWash",
-              textAlign: TextAlign.center,
+              "Explore Blogging Like Never Before\n | Bloggistic",
               style: TextStyle(
                   fontFamily: 'montserrat',
-                  fontSize: size.width * 0.045,
+                  fontSize: 30,
                   fontWeight: FontWeight.bold),
             ),
           ),
+
           SizedBox(
-            height: 30,
+            height: 50,
           ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Column(
-                children: [
-                  FeatureBox(title: "Creative Writing", description: "Unleash your creativity and share compelling stories with a global audience."),
-                  SizedBox(height: 50,),
-                  FeatureBox(title: "In-Depth Articles", description: "Explore deeply researched content that offers unique insights across various fields.")
-                ],
-              ),
-              Column(
-                children: [
-                  FeatureBox(title: "Reader Engagement", description: "Connect with readers, encourage discussions, and build a loyal audience for your blogs."),
-                  SizedBox(height: 50,),
-                  FeatureBox(title: "Time Efficiency", description: "Access well-structured blogs that deliver valuable insights quickly and efficiently.")
-                ],
-              ),
-              Column(
-                children: [
-                  FeatureBox(title: "Transparent Content Guidelines", description: "Benefit from clear, ethical, and reliable publishing standards that ensure content authenticity."),
-                  SizedBox(height: 50,),
-                  FeatureBox(title: "Personalized Reading Experience", description: "Tailor your blog feed to match your interests and discover content curated just for you.")
-                ],
-              )
-            ],
-          )
+          FeatureBox(title: "Creative Writing", description: "Unleash your creativity and share compelling stor-\nies with a global audience."),
+          SizedBox(height: 30,),
+          FeatureBox(title: "In-Depth Articles", description: "Explore deeply researched content that offers uni-\n queinsights across various fields."),
+          SizedBox(height: 30,),
+          FeatureBox(title: "Reader Engagement", description: "Connect with readers, encourage discussions, and\n build a loyal audience for your blogs."),
+          SizedBox(height: 30,),
+          FeatureBox(title: "Time Efficiency", description: "Access well-structured blogs that deliver valuable\n insights quickly and efficiently."),
+          SizedBox(height: 30,),
+          FeatureBox(title: "Transparent Content Guidelines", description: "Benefit from clear, ethical, and reliable publishing\nstandards that ensure content authenticity."),
+          SizedBox(height: 30,),
+          FeatureBox(title: "Personalized Reading Experience", description: "Tailor your blog feed to match your interests and \ndiscover content curated just for you."),
         ],
       ),
+
     );
   }
 }

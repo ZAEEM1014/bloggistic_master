@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-
 import '../../../utils/constants.dart';
 import '../../../utils/custom_title.dart';
-import 'UploadBlog/uploadBlog.dart';
+import 'UploadBlog/UploadBlogContainer_Desktop.dart';
 
 class HomepageContainer7Desktop extends StatefulWidget {
   const HomepageContainer7Desktop({super.key});
@@ -47,7 +46,7 @@ class _HomepageContainer7DesktopState extends State<HomepageContainer7Desktop>
               maxWidth: size.width <= 1920 ? size.width : Constants.desktopwidth,
               maxHeight: 630
             ),
-            child: UploadBlogPage(),
+            child: UploadBlogContainerDesktop(),
           ),
         ],
       ),

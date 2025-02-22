@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
-
 import '../../utils/customElevatedButton.dart';
 import 'navLogo.dart';
 import 'nav_button.dart';
-
+import 'package:get/get.dart';
 
 class DesktopNavBar extends StatelessWidget {
-  // final Function(int) onNavItemTap;
+  final Function(double) scrollToSection; // Function to handle scrolling
 
-  const DesktopNavBar({
-    super.key,
-    // required this.onNavItemTap,
-  });
+  const DesktopNavBar({super.key, required this.scrollToSection});
 
   @override
   Widget build(BuildContext context) {
@@ -19,15 +15,15 @@ class DesktopNavBar extends StatelessWidget {
     return Center( // Center the container horizontally
       child: Container(
         height: size.width * 0.05,
-        width: size.width < 1920 ? size.width : 1920, // Limit the width to 1300
+        width: size.width < 1920 ? size.width : 1920, // Limit the width
         decoration: const BoxDecoration(
           color: Colors.black,
           boxShadow: [
             BoxShadow(
               color: Colors.black, // Shadow color
-              offset: Offset(0, 6), // Position the shadow below the container (no horizontal movement)
-              blurRadius: 30, // Soft shadow, adjust as needed
-              spreadRadius: 30, // No horizontal spread, shadow will only appear below
+              offset: Offset(0, 6), // Shadow below the container
+              blurRadius: 30,
+              spreadRadius: 30,
             ),
           ],
         ),
@@ -36,56 +32,40 @@ class DesktopNavBar extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              NavLogo(
-                fontSize: size.width * 0.02,
-              ),
+              NavLogo(fontSize: size.width * 0.02),
               Row(
                 children: [
+                  _navDivider(),
                   NavButton(
                     text: 'Home',
                     fontSize: size.width * 0.01,
-                    onTap: () {},
+                    onTap: () => scrollToSection(0), // Scroll to Home
                   ),
-                  Container(
-                    width: 2,
-                    height: 30,
-                    color: Colors.white,
-                  ),
+                  _navDivider(),
                   NavButton(
                     text: 'Blog-View',
                     fontSize: size.width * 0.01,
-                    onTap: () {},
+                    onTap: () => scrollToSection(700), // Adjusted position
                   ),
-                  Container(
-                    width: 2,
-                    height: 30,
-                    color: Colors.white,
-                  ),
+                  _navDivider(),
                   NavButton(
                     text: 'Blog-Write',
                     fontSize: size.width * 0.01,
-                    onTap: () {},
+                    onTap: () => scrollToSection(1400),
                   ),
-                  Container(
-                    width: 2,
-                    height: 30,
-                    color: Colors.white,
-                  ),
+                  _navDivider(),
                   NavButton(
                     text: 'ABOUT US',
                     fontSize: size.width * 0.01,
-                    onTap: () {},
+                    onTap: () => scrollToSection(2300),
                   ),
-                  Container(
-                    width: 2,
-                    height: 30,
-                    color: Colors.white,
+                  _navDivider(),
+                  const SizedBox(width: 300),
+                  Customelevatedbutton(
+                    iconSize: size.width * 0.025,
+                    fontSize: size.width * 0.011,
+                    width: size.width * 0.13,
                   ),
-                  SizedBox(
-                    width: 300,
-                  ),
-
-                  Customelevatedbutton(iconSize: size.width * 0.025, fontSize: size.width * 0.011, width: size.width *0.13,),
                 ],
               ),
             ],
@@ -95,5 +75,7 @@ class DesktopNavBar extends StatelessWidget {
     );
   }
 
+  Widget _navDivider() {
+    return Container(width: 2, height: 30, color: Colors.white);
+  }
 }
-

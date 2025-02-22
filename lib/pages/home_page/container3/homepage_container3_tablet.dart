@@ -18,7 +18,7 @@ class HomepageContainer3Tablet extends StatelessWidget {
         ),
         constraints: BoxConstraints(
           maxWidth: size.width <= 1920 ? size.width : 1920,
-          maxHeight: size.height*1.25,
+          maxHeight: 1500,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -30,30 +30,33 @@ class HomepageContainer3Tablet extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "About MdMobileCarWash Hand Car Wash & Detailing",
+                  "About Bloggistic Gateway to Insightful Blogging",
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontSize: size.width * 0.06,
+                    fontSize: size.width * 0.05,
                     fontFamily: 'poppins',
                   ),
                 ),
                 SizedBox(height: 20),
-                Text(
-                  "Welcome to Washmaster, where we redefine the art of car care with our unparalleled hand car wash services. At Washmaster, we believe in more than just cleaning vehicles; we believe in enhancing and preserving their beauty, one\nmeticulous detail at a time.",
-                  style: TextStyle(
-                    fontSize: size.width * 0.035,
+                Center(
+                  child: Text(
+                    "Welcome to Bloggistic, your ultimate platform for expressing ideas, sharing knowledge, \nand discovering insightful blogs.At Bloggistic, we believe in the power of words and the \nimpact they can create in the digital world.",
+                    style: TextStyle(
+                      fontSize: size.width * 0.02805,
+                    ),
                   ),
                 ),
                 SizedBox(height: 20),
                 Text(
-                  "At Washmaster, our mission is not just to clean cars; it's to elevate the entire car care experience. We are driven by passion, guided by integrity, and dedicated to making every vehicle shine ",
-                  style: TextStyle(fontSize: size.width * 0.035),
+                  "Our mission is to provide a seamless blogging experience where writers can share their\n perspectives and readers can explore a world of knowledge and inspiration. "
+                      "Whether \nyou are a seasoned blogger or just starting, Bloggistic is your creative space to make \nyour voice heard.",
+                  style: TextStyle(fontSize: size.width * 0.028),
                 ),
                 SizedBox(height: 20),
                 Text(
-                  "– Because we believe that every ride deserves to be a masterpiece.",
+                  "– Because every story matters, and every voice deserves to be heard.",
                   style: TextStyle(
-                      fontSize: size.width * 0.04,
+                      fontSize: size.width * 0.032,
                       fontFamily: 'poppins',
                       color: AppColors.primaryColor),
                 ),
@@ -64,11 +67,11 @@ class HomepageContainer3Tablet extends StatelessWidget {
                       children: [
                         Icon(
                           Icons.location_on_outlined,
-                          size: size.width*0.04,
+                          size: size.width*0.03,
                         ),
                         SizedBox(width: 10),
                         Text(
-                          "1234, Washmaster Street,\nNew York, NY 10001",
+                          "1234, Bloggistic Street,\nSan Francisco, CA 94101",
                           style: TextStyle(fontSize: size.width * 0.030),
                         ),
                       ],
@@ -78,11 +81,11 @@ class HomepageContainer3Tablet extends StatelessWidget {
                       children: [
                         Icon(
                           Icons.perm_contact_calendar_rounded,
-                          size: size.width*0.04,
+                          size: size.width*0.03,
                         ),
                         SizedBox(width: 10),
                         Text(
-                          "+92347 8117642,\nmuhammadnumanarif04@gmail.com",
+                          "+92320 1541478,\nzaeemakh117@gmail.com",
                           style: TextStyle(fontSize: size.width * 0.030),
                         ),
                       ],
